@@ -1,0 +1,28 @@
+img {
+  border-radius: 0.625rem;
+  width: 20rem;
+}
+
+.product-detail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  &__item {
+    margin-left: 8rem;
+    margin-right: 8rem;
+  }
+  &__detail {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    max-width: 64rem;
+    margin-bottom: 0.625rem;
+    a {
+        text-decoration: none;
+    }
+  }
+  &__title {
+    font-size: 1.875rem !important;
+  }
+}

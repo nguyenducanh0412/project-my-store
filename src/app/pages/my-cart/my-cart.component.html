@@ -1,0 +1,46 @@
+<div *ngIf="cartProducts.length; else emptyCart" class="cart-container">
+  <div class="cart-container__item-details">
+    <div *ngFor="let cartProduct of cartProducts" class="cart-container__list">
+      <img class="" src="{{ cartProduct.url }}" />
+      <div class="cart-container__panel">
+        <div class="cart-container__detail">{{ cartProduct.name }}</div>
+        <div class="cart-container__detail">$ {{ cartProduct.price }}</div>
+        <div class="cart-container__detail">
+          <select
+            (ngModelChange)="onSelectChange(cartProduct, $event)"
+            style="width: 6.25rem"
+            class="form-select"
+            name="quantity"
+            [(ngModel)]="cartProduct.quantity"
+          >
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+        <div class="cart-container__detail">
+          <button
+            (click)="removeCart(cartProduct)"
+            class="cart-container__detail btn btn-primary"
+          >
+            Remove
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="cart-container__total">
+      <b>Total Price: ${{ totalPrice }}</b>
+    </div>
+  </div>
+  <div class="mb-2">
+    <app-check-out
+      [totalItem]="cartProducts.length"
+      (handleCheckout)="handleCheckoutItemInCart($event)"
+    ></app-check-out>
+  </div>
+</div>
+<ng-template #emptyCart>
+  <div class="cart-container__empty">Cart is empty.</div>
+</ng-template>

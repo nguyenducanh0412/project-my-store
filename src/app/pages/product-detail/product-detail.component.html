@@ -1,0 +1,45 @@
+<ng-container *ngIf="product">
+  <div class="product-detail-container">
+    <div class="d-flex">
+      <div class="justify-content-center">
+        <img src="{{ product.url }}" />
+      </div>
+      <div class="product-detail-container__item">
+        <div
+          class="product-detail-container__detail product-detail-container__title"
+        >
+          <b>{{ product.name }}</b>
+        </div>
+        <div class="product-detail-container__detail">
+          $ {{ product.price }}
+        </div>
+        <div class="product-detail-container__detail">
+          {{ product.description }}
+        </div>
+
+        <form (ngSubmit)="handleAddItemToCart(product)">
+          <select
+            style="width: 6.25rem"
+            name="quantity"
+            class="product-detail-container__detail form-select"
+            [(ngModel)]="product.quantity"
+          >
+            <option selected value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+          <input
+            type="submit"
+            value="Add to Cart"
+            class="product-detail-container__detail btn btn-primary"
+          />
+        </form>
+        <div class="product-detail-container__detail">
+          <a routerLink="/"> &larr;Back to list product</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

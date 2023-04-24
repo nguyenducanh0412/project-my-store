@@ -1,0 +1,14 @@
+.header {
+  background: #33b5e5;
+}
+.link {
+  &-item {
+    a {
+      color: #fff;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

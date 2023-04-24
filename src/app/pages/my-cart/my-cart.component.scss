@@ -1,0 +1,46 @@
+img {
+  width: 6.25rem;
+  max-height: 9.375rem;
+  height: 9.375rem;
+  border-radius: 0.625rem;
+}
+
+.cart-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 4rem;
+  &__item-details {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: left;
+    margin-left: 5rem;
+  }
+  &__total,
+  &__list {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1.25rem;
+  }
+  &__panel {
+    margin: 0 3.125rem;
+  }
+  &__detail {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    max-width: 64rem;
+    margin-bottom: 0.625rem;
+  }
+  &__empty {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+    color: gray;
+    font-size: 1.875rem;
+    a {
+      text-decoration: none;
+    }
+  }
+}

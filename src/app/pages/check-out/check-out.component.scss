@@ -1,0 +1,10 @@
+.checkout-form-container {
+  margin-bottom: 0.75rem;
+  .lbl-required {
+    display: block;
+    &::after {
+      content: " *";
+      color: red;
+    }
+  }
+}
